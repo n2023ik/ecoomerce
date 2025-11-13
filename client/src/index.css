@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { 
+  color-scheme: light;
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --accent: #EC4899;
+  --success: #10B981;
+  --warning: #F59E0B;
+}
+
+body { 
+  @apply bg-slate-50 text-slate-900;
+  font-feature-settings: 'kern' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container { @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8; }
+
+.card { 
+  @apply rounded-2xl bg-white shadow-sm border border-slate-200;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  @apply shadow-lg border-slate-300;
+}
+
+.btn { 
+  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold;
+  transition: all 0.2s ease-in-out;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary { 
+  @apply bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-ghost { 
+  @apply border border-slate-300 bg-white hover:bg-slate-50 active:scale-95;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
